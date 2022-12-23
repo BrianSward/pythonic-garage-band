@@ -1,5 +1,6 @@
 class Band:
     def __init__(self, name, members):
+
         self.name = name
         self.members = members
 
@@ -7,13 +8,27 @@ class Band:
         return self.name
 
     def __repr__(self):
-        pass
+        return f"Band. name={self.name} and members={self.members}"
 
-    def play_solos(self, member):
-        pass
+    def play_solos(self):
+        solos = []
+        for member in self.members:
+            solos.append(member.play_solo())
+        return solos
 
     def to_list(self):
         pass
+
+    def instruments(self, band):
+        scraped = []
+        for self.member in band:
+            scraped.append(self.member.get_instrument)
+        return scraped
+
+    def individual_solos(self, band):
+        self.play_solos()
+
+
 
 class Musician:
     def __init__(self, name):
@@ -22,6 +37,7 @@ class Musician:
     
     def get_instrument(self):
         return self.instrument
+
 
 class Guitarist(Musician):
     def __init__(self, name, instrument="guitar"):
@@ -33,6 +49,9 @@ class Guitarist(Musician):
 
     def __repr__(self):
         return f"Guitarist instance. Name = {self.name}"
+
+    def play_solo(self):
+        return "face melting guitar solo"
 
 
 class Bassist(Musician):
@@ -46,6 +65,8 @@ class Bassist(Musician):
     def __repr__(self):
         return f"Bassist instance. Name = {self.name}"
 
+    def play_solo(self):
+        return "bom bom buh bom"
 
 class Drummer(Musician):
     def __init__(self, name, instrument="drums"):
@@ -57,3 +78,7 @@ class Drummer(Musician):
 
     def __repr__(self):
         return f"Drummer instance. Name = {self.name}"
+
+    def play_solo(self):
+        return "rattle boom crash"
+
