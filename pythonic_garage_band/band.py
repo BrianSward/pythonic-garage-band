@@ -1,6 +1,7 @@
 class Band:
-    def __init__(self, name):
+    def __init__(self, name, members):
         self.name = name
+        self.members = members
 
     def __str__(self):
         return self.name
@@ -16,8 +17,11 @@ class Band:
 
 class Musician:
     def __init__(self, name):
+        self.instrument = None
         self.name = name
-
+    
+    def get_instrument(self):
+        return self.instrument
 
 class Guitarist(Musician):
     def __init__(self, name, instrument="guitar"):
