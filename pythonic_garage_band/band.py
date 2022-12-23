@@ -32,7 +32,15 @@ class Guitarist(Musician):
 
 
 class Bassist(Musician):
-    pass
+    def __init__(self, name, instrument="bass"):
+        self.name = name
+        self.instrument = instrument
+
+    def __str__(self):
+        return f"My name is {self.name} and I play {self.instrument}"
+
+    def __repr__(self):
+        return f"Bassist instance. Name = {self.name}"
 
 
 class Drummer(Musician):
